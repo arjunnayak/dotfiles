@@ -2,8 +2,6 @@
 
 set -e
 
-DOTFILES_DIR=~/.dotfiles
-
 function homebrew() {
     echo ">"
     echo "> Installing Brewfile"
@@ -66,16 +64,17 @@ function gitconfig() {
     git config --global commit.message "${DOTFILES_DIR}/.gitmessage"
 }
 
-function bashrc() {
+function profile() {
     echo ">"
-    echo "> Creating ~/.bashrc"
-    cat <<EOF > ~/.bashrc
+    echo "> Creating ~/.profile"
+    cat <<EOF > ~/.profile
 #!/bin/bash
 
-SHELL_ROOT=${DOTFILES_DIR}
+export DOTFILES_DIR=~/.dotfiles
 
-for file in \$SHELL_ROOT/dotfiles.d/*; do
-  . \$file
+for file in $DOTFILES_DIR/dotfiles.d/*
+do
+  . $file
 done
 EOF
 }
@@ -85,7 +84,7 @@ homebrew
 # pip
 gitconfig
 # nelson
-bashrc
+profile
 
 echo ">"
 echo "> Done!"
