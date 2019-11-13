@@ -16,6 +16,13 @@ function pip() {
     pip3 install --upgrade gimme-aws-creds
 }
 
+function node() {
+    NODE_VERSION="12.13.0"
+    echo ">"
+    echo "> Install node $NODE_VERSION"
+    nvm install $NODE_VERSION
+}
+
 # function nelson() {
 #     echo ">"
 #     echo "> Installing nelson"
@@ -85,6 +92,7 @@ homebrew
 gitconfig
 # nelson
 profile
+node
 
 echo ">"
 echo "> Done!"
