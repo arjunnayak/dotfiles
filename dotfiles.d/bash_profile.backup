@@ -1,0 +1,41 @@
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+source ~/.profile
+[[ -s ~/.bashrc ]] && source ~/.bashrc
+export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/Applications/apache-tomcat-7.0.72/bin:$PATH
+export PATH=/Applications/apache-maven-3.3.9/bin:$PATH
+export PATH=$PATH:/Users/arjunnayak/Documents/go_appengine
+# Setting PATH for Python 3.5
+# The orginal version is saved in .bash_profile.pysave
+export PATH=/Library/Frameworks/Python.framework/Versions/3.5/bin:$PATH
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+export PATH=$PATH:/usr/local/php5/bin
+
+# git aliases
+alias ga='git add'
+alias gs='git status'
+alias gc='git commit'
+alias gco='git checkout'
+alias gd='git diff'
+alias gp='git push'
+alias gpom='git push -u origin master'
+alias gpu='git pull'
+alias grh='git reset --hard'
+alias gcl='git clone'
+alias gl='git log'
+
+export SVN_EDITOR=vim 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/arjunnayak/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/arjunnayak/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/arjunnayak/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/arjunnayak/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+# greentap aliases
+alias greentap-ec2='ssh -i ~/Downloads/awseb22open.pem ec2-user@ec2-52-53-193-187.us-west-1.compute.amazonaws.com'
+export PATH="/usr/local/opt/openssl/bin:$PATH"
