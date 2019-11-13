@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export PS1="\u@local:\w$ "
+
+# export PS1="\W \$ "

@@ -1,0 +1,85 @@
+#!/bin/bash
+
+# Terminal Colors
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad 
+# export LSCOLORS=GxFxCxDxBxegedabagaced arjuns
+
+# Preserve bash history in multiple terminal windows
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+export HISTTIMEFORMAT="%h %d %H:%M:%S> "
+
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="$PROMPT_COMMAND;history -a; history -c; history -r"
+
+# Java + Friends
+#export JAVA_VERSION=11
+export JAVA_VERSION=1.8
+export JAVA_HOME=$(/usr/libexec/java_home -v $JAVA_VERSION)
+export ANT_OPTS="-Xmx512m -XX:MaxPermSize=256m"
+export MAVEN_OPTS="-Xmx756m"
+
+# SSH
+export SSH_INSECURE='-o StrictHostKeyChecking=no'
+
+# Go
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# Terraform
+# export TERRAFORM_HOME=/usr/local/opt/terraform@0.11
+# export PATH=$PATH:$TERRAFORM_HOME/bin
+
+## Direnv
+eval "$(direnv hook bash)"
+export DIRENV_WARN_TIMEOUT=10s
+
+## GPG
+export GPG_TTY=$(tty)
+
+# Editor
+export EDITOR=/Applications/Sublime\ Text\ 2
+
+# Nvm
+export NVM_DIR="/Users/arjunnayak/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Yarn
+export PATH="$HOME/.yarn/bin:$PATH"
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# mysql
+export PATH=/usr/local/mysql/bin:$PATH
+
+# Apache maven, tomcat
+export PATH=/Applications/apache-tomcat-7.0.72/bin:$PATH
+export PATH=/Applications/apache-maven-3.3.9/bin:$PATH
+
+# Setting PATH for Python 3.5
+# The orginal version is saved in .bash_profile.pysave
+export PATH=/Library/Frameworks/Python.framework/Versions/3.5/bin:$PATH
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+export PATH=$PATH:/usr/local/php5/bin
+
+# svn 
+export SVN_EDITOR=vim 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/arjunnayak/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/arjunnayak/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/arjunnayak/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/arjunnayak/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+# greentap aliases
+alias greentap-ec2='ssh -i ~/Downloads/awseb22open.pem ec2-user@ec2-52-53-193-187.us-west-1.compute.amazonaws.com'
+
+# OpenSSL
+export PATH="/usr/local/opt/openssl/bin:$PATH"
