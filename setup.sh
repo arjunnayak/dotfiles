@@ -80,8 +80,8 @@ done
 EOF
 }
 
-# disable homebrew, pip, nelson (container orchestrator)
-# homebrew
+# disable pip, nelson (container orchestrator)
+homebrew
 # pip
 gitconfig
 # nelson
