@@ -1,5 +1,11 @@
 #!/bin/bash
 
-export PS1="\u@local:\w$ "
+local green="\\[\\e[0;32m\\]"
+local purple="\\[\\e[0;35m\\]"
+local cyan_bold="\\[\\e[36;1m\\]"
+local reset_color="\\[\\e[39m\\]"
+export PS1="
+${cyan_bold}$(date +'%H:%M:%S') ${purple}\\h ${reset_color}in ${green}\\w
+${cyan_bold}$(git_prompt)${green}→${reset_color} "
 
 # export PS1="\W \$ "
