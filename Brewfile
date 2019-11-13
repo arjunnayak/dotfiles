@@ -31,7 +31,7 @@ brew "telnet"
 brew "terraform"
 brew "watch"
 brew "yarn"
-cask "vault"
+cask "aws-vault"
 cask "virtualbox"
 
 # Excluded
