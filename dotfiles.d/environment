@@ -83,3 +83,10 @@ alias greentap-ec2='ssh -i ~/Downloads/awseb22open.pem ec2-user@ec2-52-53-193-18
 
 # OpenSSL
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# Bash History
+# Append to history instead of overwriting it
+shopt -s histappend
+# set a large history size
+HISTSIZE=64000
+HISTFILESIZE=$HISTSIZE
